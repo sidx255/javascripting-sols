@@ -3,19 +3,15 @@ let n = 153
 let len = n.length
 
 const isArmstrong = n => {
-let i = 0;
-let sum = 0;
-
-while (i < len) 
-    {
-        let digit = n[i] - '0';
-        sum = (sum + Math.pow(digit, len));
-        i++;
+    let num = n;
+    let t = 0;
+    while(n != 0) {
+        t += (n%10)**3;
+        n =  Math.floor(n/10);
     }
 
-    return sum == n;
+    return num === t;
 }
-
 
 const isPrime = n => {
     for (let i = 2, s = Math.sqrt(n); i <= s; i++) {
